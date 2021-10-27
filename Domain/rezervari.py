@@ -1,6 +1,6 @@
 def creeaza_rezervare(ID, nume, clasa, pret , checkin_facut):
     '''
-    Creeaza un dictionar care reprezinta o rezervare
+    Creeaza o lista cu rezervarile
     :param ID: int
     :param nume: string
     :param clasa:string: 'economy','economy plus',or 'business'
@@ -8,13 +8,8 @@ def creeaza_rezervare(ID, nume, clasa, pret , checkin_facut):
     :param checkin_facut: string: 'da' sau 'nu'
     :return: un dictionar ce contine o rezervre
     '''
-    return {
-        'ID':ID,
-        'nume': nume,
-        'clasa': clasa,
-        'pret': pret,
-        'checkin_facut':checkin_facut
-    }
+    lista=[]
+    return lista + [ID,nume,clasa,pret,checkin_facut]
 
 def get_ID(rezervare):
     '''
@@ -22,7 +17,9 @@ def get_ID(rezervare):
     :param rezervare: dict
     :return:ID-ul rezervarii
     '''
-    return rezervare['ID']
+    for i in range(0, len(rezervare)-1):
+        ID=rezervare[0]
+    return  ID
 
 def get_nume(rezervare):
     '''
@@ -30,7 +27,9 @@ def get_nume(rezervare):
     :param rezervare: dict
     :return: numele rezervarii
     '''
-    return rezervare['nume']
+    for i in range(0, len(rezervare)-1):
+        nume=rezervare[1]
+    return  nume
 
 
 def get_clasa(rezervare):
@@ -39,7 +38,9 @@ def get_clasa(rezervare):
     :param rezervare: dict
     :return: clasa la care este facuta rezervarea
     '''
-    return rezervare['clasa']
+    for i in range(0, len(rezervare) - 1):
+        clasa = rezervare[2]
+    return clasa
 
 
 def get_pret(rezervare):
@@ -48,7 +49,9 @@ def get_pret(rezervare):
     :param rezervare: dict
     :return: pretul zborului
     '''
-    return rezervare['pret']
+    for i in range(0, len(rezervare) - 1):
+        pret = rezervare[3]
+    return pret
 
 
 def get_checkin_facut(rezervare):
@@ -57,7 +60,11 @@ def get_checkin_facut(rezervare):
     :param rezervare: dict
     :return: statusul checkin-ului
     '''
-    return rezervare['checkin_facut']
+    for i in range(0, len(rezervare) - 1):
+        checkin_facut=rezervare[4]
+    return checkin_facut
+
+
 
 
 def set_nume(rezervare,nume):
@@ -67,7 +74,8 @@ def set_nume(rezervare,nume):
     :param nume: string
     :return:
     '''
-    rezervare['nume']=nume
+    for i in range(0, len(rezervare) - 1):
+        rezervare[1]=nume
 
 def set_clasa(rezervare,clasa):
     '''
@@ -76,7 +84,8 @@ def set_clasa(rezervare,clasa):
     :param clasa: string
     :return:
     '''
-    rezervare['clasa']=clasa
+    for i in range(0, len(rezervare) - 1):
+        rezervare[2]=clasa
 
 
 def set_pret(rezervare,pret):
@@ -86,7 +95,8 @@ def set_pret(rezervare,pret):
     :param pret: float
     :return:
     '''
-    rezervare['pret']=pret
+    for i in range(0, len(rezervare) - 1):
+        rezervare[3]=pret
 
 def set_checkin_facut(rezervare,checkin_facut):
     '''
@@ -95,7 +105,8 @@ def set_checkin_facut(rezervare,checkin_facut):
     :param :cehckin_facut: string
     :return:
     '''
-    rezervare['checkin_facut']=checkin_facut
+    for i in range(0, len(rezervare) - 1):
+        rezervare[4]=checkin_facut
 
 
 def to_string(rezervare):
