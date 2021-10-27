@@ -6,7 +6,7 @@ def creeaza_rezervare(ID, nume, clasa, pret , checkin_facut):
     :param clasa:string: 'economy','economy plus',or 'business'
     :param pret: float
     :param checkin_facut: string: 'da' sau 'nu'
-    :return: un dictionar ce contine o rezervre
+    :return: o lista  ce contine rezervarile
     '''
     lista=[]
     return lista + [ID,nume,clasa,pret,checkin_facut]
