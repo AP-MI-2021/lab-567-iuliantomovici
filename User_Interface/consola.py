@@ -1,6 +1,10 @@
 from Domain.rezervari import to_string
 from Logic.CRUD import adauga_rezervare, sterge_rezervare, modifica_rezervare
+from Logic.ieftinire import ieftinire
+from Logic.pret_maxim import *
+from Logic.validare import validare_procent
 from User_Interface.meniu import meniu, meniu_CRUD
+from Logic.clasa_superioara import clasa_superioara
 
 def ui_adauga_rezervare(lista):
     ID = input('Dati ID-ul rezervarii: ')
@@ -64,11 +68,19 @@ def consola(lista):
                 else:
                     print('Optiune gresita! Reincercati: ')
         elif optiune=='2':
-            pass
+            nume=input('Dati numele a carui clasa vreti sa fie trecuta la una superioara: ')
+            clasa_superioara(nume,lista)
         elif optiune == '3':
-            pass
+            procentaj=input('Cu ce procentaj se va ieftini rezervarea daca checkin-ul este facut: ')
+            procentaj=validare_procent(procentaj)
+            ieftinire(procentaj,lista)
         elif optiune == '4':
-            pass
+            max1=get_max1(lista)
+            max2=get_max2(lista)
+            max3=get_max3(lista)
+            print('pretul maxim de la clasa economy este : ',max1)
+            print('pretul maxim de la clasa economy plus este : ', max2)
+            print('pretul maxim de la clasa business este : ', max3)
         elif optiune == '5':
             pass
         elif optiune=='6':

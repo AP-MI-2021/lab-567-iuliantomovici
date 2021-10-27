@@ -1,3 +1,4 @@
+"""
 def creeaza_rezervare(ID, nume, clasa, pret , checkin_facut):
     '''
     Creeaza o lista cu rezervarile
@@ -105,9 +106,9 @@ def set_checkin_facut(rezervare,checkin_facut):
     :return:
     '''
 
-    rezervare[4]=checkin_facut
+    rezervare[4]=checkin_facut"""
 #codul cu dictionar
-"""
+
 def creeaza_rezervare(ID, nume, clasa, pret , checkin_facut):
     '''
     Creeaza un dictionar care reprezinta o rezervare
@@ -206,7 +207,7 @@ def set_checkin_facut(rezervare,checkin_facut):
     :return:
     '''
     rezervare['checkin_facut']=checkin_facut
-"""
+
 
 
 def to_string(rezervare):
