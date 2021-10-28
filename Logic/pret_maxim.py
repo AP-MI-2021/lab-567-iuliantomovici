@@ -36,3 +36,14 @@ def get_max3(lista):
         if get_clasa(rezervare)=='business' and get_pret(rezervare)>max:
             max=get_pret(rezervare)
     return max
+def get_max(lista):
+    '''
+    Dtermina pretul maxim
+    :param lista: lista de rezervari
+    :return: max
+    '''
+    max = -1
+    for rezervare in lista:
+        if get_pret(rezervare) > max:
+            max = get_pret(rezervare)
+    return max

@@ -23,3 +23,11 @@ def test_get_max3():
     lista = adauga_rezervare(4, 'John', 'economy plus', 2000, 'nu', lista)
     lista = adauga_rezervare(5, 'John', 'economy', 2100, 'nu', lista)
     assert get_max3(lista)==1000
+def test_get_max():
+    lista = []
+    lista = adauga_rezervare('2', 'Valicu', 'business', 1000, 'da', lista)
+    lista = adauga_rezervare(3, 'John', 'economy', 2000, 'nu', lista)
+    lista = adauga_rezervare(4, 'John', 'economy plus', 2000, 'nu', lista)
+    lista = adauga_rezervare(5, 'John', 'economy', 2100, 'nu', lista)
+    assert get_max(lista) == 2100
+
