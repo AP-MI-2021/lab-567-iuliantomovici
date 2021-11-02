@@ -26,9 +26,10 @@ def adauga_rezervare (ID, nume, clasa, pret , checkin_facut,lista):
     :param lista:lista de rezervari
     :return: lista ce contine rezervarea adaugata cat si pe cele existente
     '''
+
+    ID, nume, clasa, pret , checkin_facut= validare_rezervare(ID, nume, clasa, pret , checkin_facut)
     if (get_by_ID(ID,lista)!=None):
         raise ValueError ("ID duplicat")
-    ID, nume, clasa, pret , checkin_facut= validare_rezervare(ID, nume, clasa, pret , checkin_facut)
     rezervare = creeaza_rezervare(ID, nume, clasa, pret , checkin_facut)
     return lista + [rezervare]
 
