@@ -1,3 +1,4 @@
+
 def validare_rezervare(ID, nume, clasa, pret, checkin_facut):
     '''
     valideaza datele de intrare si arunca erori in caz de nedeterminare
@@ -11,6 +12,7 @@ def validare_rezervare(ID, nume, clasa, pret, checkin_facut):
     errors = []
     if ID == '':
         errors.append('Id-ul nu poate fi vid')
+
     try :
         ID=int(ID)
     except ValueError:

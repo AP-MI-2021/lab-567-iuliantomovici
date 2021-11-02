@@ -3,6 +3,17 @@ from copy import deepcopy
 from Domain.rezervari import creeaza_rezervare, get_ID, set_nume, set_clasa, set_pret, set_checkin_facut
 from Logic.validare import validare_rezervare
 
+def get_by_ID(ID, lista):
+    '''
+    Gaseste o rezervare dupa un ID dat intr-o lista.
+    :param ID: int
+    :param lista: lista de rezervari
+    :return: rezervarea cu ID-ul dat sau None in caz ca aceasta nu exista
+    '''
+    for rezervare in lista:
+        if get_ID(rezervare) == ID:
+            return rezervare
+    return None
 
 def adauga_rezervare (ID, nume, clasa, pret , checkin_facut,lista):
     '''
@@ -15,21 +26,13 @@ def adauga_rezervare (ID, nume, clasa, pret , checkin_facut,lista):
     :param lista:lista de rezervari
     :return: lista ce contine rezervarea adaugata cat si pe cele existente
     '''
+    if (get_by_ID(ID,lista)!=None):
+        raise ValueError ("ID duplicat")
     ID, nume, clasa, pret , checkin_facut= validare_rezervare(ID, nume, clasa, pret , checkin_facut)
     rezervare = creeaza_rezervare(ID, nume, clasa, pret , checkin_facut)
     return lista + [rezervare]
 
-def get_by_ID(ID, lista):
-    '''
-    Gaseste o rezervare dupa un ID dat intr-o lista.
-    :param ID: int
-    :param lista: lista de rezervari
-    :return: rezervarea cu ID-ul dat sau None in caz ca aceasta nu exista
-    '''
-    for rezervare in lista:
-        if get_ID(rezervare) == ID:
-            return rezervare
-    return None
+
 
 def sterge_rezervare(ID, lista):
     '''

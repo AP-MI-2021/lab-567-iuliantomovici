@@ -4,6 +4,7 @@ from Tests.test_domain import test_creeaza_rezervare
 from Tests.test_ieftinire import test_ieftinire
 from Tests.test_ordonare import test_ordonare
 from Tests.test_pret_maxim import *
+from Tests.test_sume import test_sume
 
 
 def run_all_tests():
@@ -18,3 +19,4 @@ def run_all_tests():
     test_get_max3()
     test_get_max()
     test_ordonare()
+    test_sume()

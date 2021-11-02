@@ -1,8 +1,9 @@
 from Domain.rezervari import to_string
 from Logic.CRUD import adauga_rezervare, sterge_rezervare, modifica_rezervare
 from Logic.ieftinire import ieftinire
-from Logic.ordonare import ordonare
+from Logic.ordonare import ordonare, ordonare_2
 from Logic.pret_maxim import *
+from Logic.sume import sume
 from Logic.validare import validare_procent
 from User_Interface.meniu import meniu, meniu_CRUD
 from Logic.clasa_superioara import clasa_superioara
@@ -19,6 +20,8 @@ def ui_adauga_rezervare(lista):
         return rezervare
     except ValueError as ve:
         print("au aparut erori",ve)
+    except:
+        print("unknown error")
 
 
 def ui_sterge_rezervare(lista):
@@ -83,8 +86,8 @@ def consola(lista):
             print('pretul maxim de la clasa economy plus este : ', max2)
             print('pretul maxim de la clasa business este : ', max3)
         elif optiune == '5':
-            print(ordonare(lista))
+            show(ordonare_2(lista))
         elif optiune=='6':
-            pass
+            print(sume(lista))
         elif optiune == '7':
             pass

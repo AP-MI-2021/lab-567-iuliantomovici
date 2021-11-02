@@ -7,7 +7,7 @@ def get_max1(lista):
     :param lista: lista de rezervari
     :return: max
     '''
-    max=-1
+    max=0
     for rezervare in lista:
         if get_clasa(rezervare)=='economy' and get_pret(rezervare)>max:
             max=get_pret(rezervare)
@@ -19,7 +19,7 @@ def get_max2(lista):
     :param lista: lista de rezervari
     :return: max
     '''
-    max=-1
+    max=0
     for rezervare in lista:
         if get_clasa(rezervare)=='economy plus' and get_pret(rezervare)>max:
             max=get_pret(rezervare)
@@ -31,7 +31,7 @@ def get_max3(lista):
     :param lista: lista de rezervari
     :return: max
     '''
-    max=-1
+    max=0
     for rezervare in lista:
         if get_clasa(rezervare)=='business' and get_pret(rezervare)>max:
             max=get_pret(rezervare)
@@ -42,7 +42,7 @@ def get_max(lista):
     :param lista: lista de rezervari
     :return: max
     '''
-    max = -1
+    max = 0
     for rezervare in lista:
         if get_pret(rezervare) > max:
             max = get_pret(rezervare)
