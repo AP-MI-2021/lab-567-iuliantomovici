@@ -1,12 +1,12 @@
-from Domain.rezervari import to_string
 from Logic.CRUD import adauga_rezervare, sterge_rezervare, modifica_rezervare
+from Logic.clasa_superioara import clasa_superioara
 from Logic.ieftinire import ieftinire
-from Logic.ordonare import ordonare, ordonare_2
+from Logic.ordonare import ordonare_2
 from Logic.pret_maxim import *
 from Logic.sume import sume
 from Logic.validare import validare_procent
 from User_Interface.meniu import meniu, meniu_CRUD
-from Logic.clasa_superioara import clasa_superioara
+
 
 def ui_adauga_rezervare(lista):
     ID = input('Dati ID-ul rezervarii: ')
@@ -15,9 +15,9 @@ def ui_adauga_rezervare(lista):
     pret= input ('Dati pretul: ')
     checkin_facut = input('Checkin: ')
     try:
-        rezervare = adauga_rezervare( ID, nume, clasa, pret, checkin_facut,lista)
+        lista = adauga_rezervare( ID, nume, clasa, pret, checkin_facut,lista)
         print('Rezervarea a fost adaugata cu succes')
-        return rezervare
+        return lista
     except ValueError as ve:
         print("au aparut erori",ve)
     except:
@@ -37,13 +37,14 @@ def ui_modifica_rezervare(lista):
     pret= input ('Dati noul pret: ')
     checkin_facut = input('Checkin: ')
     try:
-        rezervare= modifica_rezervare(ID, nume, clasa, pret , checkin_facut, lista)
+        lista= modifica_rezervare(ID, nume, clasa, pret , checkin_facut, lista)
         print("Rezervarea a fost modificata cu succes!")
-        return rezervare
+        return lista
     except ValueError as ve:
         print("au aparut erori",ve)
     except:
         print("unknown error")
+    return lista
 
 
 
