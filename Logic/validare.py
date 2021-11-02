@@ -10,9 +10,9 @@ def validare_rezervare(ID, nume, clasa, pret, checkin_facut):
     :return: toti parametrii
     '''
     errors = []
+
     if ID == '':
         errors.append('Id-ul nu poate fi vid')
-
     try :
         ID=int(ID)
     except ValueError:

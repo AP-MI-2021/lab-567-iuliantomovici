@@ -22,6 +22,7 @@ def ui_adauga_rezervare(lista):
         print("au aparut erori",ve)
     except:
         print("unknown error")
+    return lista
 
 
 def ui_sterge_rezervare(lista):
