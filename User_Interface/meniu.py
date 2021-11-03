@@ -14,4 +14,5 @@ def meniu():
 4.Determinarea prețului maxim pentru fiecare clasă
 5.Ordonarea rezervărilor descrescător după preț
 6.Afișarea sumelor prețurilor pentru fiecare nume
-7.Undo''')
+7.Undo
+8.Redo''')

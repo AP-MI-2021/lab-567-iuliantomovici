@@ -7,6 +7,7 @@ from Tests.test_pret_maxim import *
 from Tests.test_sume import test_sume
 
 
+
 def run_all_tests():
     test_creeaza_rezervare()
     test_adauga_rezervare()

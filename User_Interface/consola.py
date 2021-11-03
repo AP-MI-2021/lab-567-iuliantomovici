@@ -48,6 +48,9 @@ def ui_modifica_rezervare(lista):
 
 
 
+
+
+
 def show(lista):
     for rezervare in lista:
         print(to_string(rezervare))
@@ -93,3 +96,7 @@ def consola(lista):
             print(sume(lista))
         elif optiune == '7':
             pass
+        elif optiune=='8':
+            pass
+        else:
+            print('optiune invalida! Reincercait: ')

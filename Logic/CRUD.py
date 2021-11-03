@@ -3,6 +3,7 @@ from copy import deepcopy
 from Domain.rezervari import creeaza_rezervare, get_ID, set_nume, set_clasa, set_pret, set_checkin_facut
 from Logic.validare import validare_rezervare
 
+
 def get_by_ID(ID, lista):
     '''
     Gaseste o rezervare dupa un ID dat intr-o lista.
@@ -15,7 +16,8 @@ def get_by_ID(ID, lista):
             return rezervare
     return None
 
-def adauga_rezervare (ID, nume, clasa, pret , checkin_facut,lista):
+
+def adauga_rezervare ( ID, nume, clasa, pret , checkin_facut,lista ) :
     '''
     Adauga o rezervare in lista
     :param ID: int
@@ -27,10 +29,10 @@ def adauga_rezervare (ID, nume, clasa, pret , checkin_facut,lista):
     :return: lista ce contine rezervarea adaugata cat si pe cele existente
     '''
 
-    ID, nume, clasa, pret , checkin_facut= validare_rezervare(ID, nume, clasa, pret , checkin_facut)
-    if (get_by_ID(ID,lista)!=None):
+    ID, nume, clasa, pret , checkin_facut= validare_rezervare( ID, nume, clasa, pret , checkin_facut )
+    if ( get_by_ID(ID,lista ) != None ):
         raise ValueError ("ID duplicat")
-    rezervare = creeaza_rezervare(ID, nume, clasa, pret , checkin_facut)
+    rezervare = creeaza_rezervare( ID, nume, clasa, pret , checkin_facut )
     return lista + [rezervare]
 
 
@@ -57,6 +59,8 @@ def modifica_rezervare(ID, nume, clasa, pret , checkin_facut,lista):
     '''
     ID, nume, clasa, pret, checkin_facut, = validare_rezervare(ID, nume, clasa, pret , checkin_facut)
     rez = deepcopy(lista)
+    if get_by_ID(ID, lista)==None:
+        raise ValueError ('Nu exista ID ul dat')
     for rezervare in rez:
         if get_ID(rezervare) == ID:
             set_nume(rezervare,nume)
