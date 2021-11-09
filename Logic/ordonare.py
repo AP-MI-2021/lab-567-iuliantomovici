@@ -1,11 +1,10 @@
-from copy import deepcopy
-
-from Domain.rezervari import get_ID, get_pret, to_string
-from Logic.CRUD import sterge_rezervare
-from Logic.pret_maxim import get_max
 
 
-def ordonare(lista):
+from Domain.aeroport import adaugare_lista_undo_and_clear_redo, get_lista_curenta
+from Domain.rezervari import *
+
+#varianta 1 de ordonare
+"""def ordonare(lista):
     '''
     Ordoneaza descrescator lista de rezervari in functie de pret
     :param lista: lista de rezervari
@@ -17,14 +16,16 @@ def ordonare(lista):
             if get_pret(lista[i]) < get_pret(lista[i + 1]):
                 lista[i], lista[i + 1] = lista[i + 1], lista[i]
 
-    return lista
+    return lista"""
 
-def ordonare_2(lista):
+def ordonare_2(aeroport):
     '''
     Ordoneaza descrescator lista de rezervari in functie de pret
-    :param lista: lista de rezervari
+    :param aeroport:dict
     :return: lista ordonata
     '''
+    adaugare_lista_undo_and_clear_redo(aeroport)
+    lista = get_lista_curenta(aeroport)
     return sorted(lista, key=lambda rezervare: get_pret(rezervare),reverse=True)
 
 
