@@ -31,11 +31,26 @@ def test_undo_redo():
     assert len(get_lista_curenta(aeroport)) == 3
 
     apply_undo(aeroport)
+    apply_undo(aeroport)
+    assert len(get_lista_curenta(aeroport)) == 1
+
+    adauga_rezervare(1, 'iulian', 'economy', 122, 'da', aeroport)
+    assert len(get_lista_curenta(aeroport)) == 2
+
+    apply_redo(aeroport)
     assert len(get_lista_curenta(aeroport)) == 2
 
     apply_undo(aeroport)
     assert len(get_lista_curenta(aeroport)) == 1
+    apply_undo(aeroport)
+    assert len(get_lista_curenta(aeroport)) == 0
+
+    apply_redo(aeroport)
+    apply_redo(aeroport)
+    assert len(get_lista_curenta(aeroport)) == 2
 
     apply_redo(aeroport)
     assert len(get_lista_curenta(aeroport)) == 2
+
+
 

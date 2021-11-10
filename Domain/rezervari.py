@@ -120,11 +120,11 @@ def creeaza_rezervare(ID, nume, clasa, pret , checkin_facut):
     :return: un dictionar ce contine o rezervre
     '''
     return {
-        'ID':ID,
-        'nume': nume,
-        'clasa': clasa,
-        'pret': pret,
-        'checkin_facut':checkin_facut
+        'ID' :ID,
+        'nume' :nume,
+        'clasa' :clasa,
+        'pret' :pret,
+        'checkin_facut' : checkin_facut
     }
 
 def get_ID(rezervare):
@@ -187,7 +187,7 @@ def set_clasa(rezervare,clasa):
     :param clasa: string
     :return:
     '''
-    rezervare['clasa']=clasa
+    rezervare['clasa'] = clasa
 
 
 def set_pret(rezervare,pret):

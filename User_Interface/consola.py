@@ -29,7 +29,17 @@ def ui_adauga_rezervare(aeroport):
 
 def ui_sterge_rezervare(aeroport):
     ID = int(input('Dati ID-ul rezervarii de sters: '))
-    return sterge_rezervare(ID, aeroport)
+    try:
+        aeroport = sterge_rezervare(ID,aeroport)
+        print('Rezervarea a fost stearsa cu succes')
+        return aeroport
+
+    except ValueError as ve:
+        print("au aparut erori", ve)
+    except:
+        print("unknown error")
+    return aeroport
+
 
 
 def ui_modifica_rezervare(aeroport):
@@ -105,7 +115,7 @@ def consola(aeroport):
             print('pretul maxim de la clasa economy plus este : ', max2)
             print('pretul maxim de la clasa business este : ', max3)
         elif optiune == '5':
-            show(ordonare_2(aeroport))
+            print(ordonare_2(aeroport))
         elif optiune=='6':
             print(sume(aeroport))
         elif optiune == '7':

@@ -24,7 +24,6 @@ def ordonare_2(aeroport):
     :param aeroport:dict
     :return: lista ordonata
     '''
-    adaugare_lista_undo_and_clear_redo(aeroport)
     lista = get_lista_curenta(aeroport)
     return sorted(lista, key=lambda rezervare: get_pret(rezervare),reverse=True)
 

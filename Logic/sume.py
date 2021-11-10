@@ -1,7 +1,8 @@
+from Domain.aeroport import get_lista_curenta
 from Domain.rezervari import get_nume, get_pret
 
 
-def sume(lista):
+def sume(aeroport):
     '''
     Calculeaza suma prturilor rezervarilor pentru fiecare nume
     :param lista: lista de rezervari
@@ -9,6 +10,7 @@ def sume(lista):
     '''
     numele=[]
     sumele=[]
+    lista = get_lista_curenta(aeroport)
     for rezervare in lista:
         if get_nume(rezervare) not in numele:
             numele.append(get_nume(rezervare))

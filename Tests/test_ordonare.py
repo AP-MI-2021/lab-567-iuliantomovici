@@ -1,6 +1,6 @@
 from Domain.aeroport import create_aeroport, get_lista_curenta
 from Logic.CRUD import adauga_rezervare
-from Logic.ordonare import ordonare, ordonare_2
+from Logic.ordonare import ordonare_2
 
 
 def test_ordonare():

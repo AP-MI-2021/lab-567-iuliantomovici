@@ -57,8 +57,11 @@ def sterge_rezervare(ID, aeroport):
     :param aeroport:dict
     :return:
     '''
+
     adaugare_lista_undo_and_clear_redo(aeroport)
     lista=get_lista_curenta(aeroport)
+    if ( get_by_ID(ID,lista ) == None ):
+        raise ValueError ("ID inexistent")
     index=find_rezervare_index(ID,lista)
     if index!=None:
         lista.pop(index)
